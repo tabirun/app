@@ -1,0 +1,31 @@
+import type { TabiContext } from "./context.ts";
+import type { TabiMiddleware } from "./router.ts";
+
+/**
+ * Compose middleware, running each in sequence.
+ *
+ * @throws Error if next() is called multiple times in the same middleware
+ */
+export const compose = (middleware: TabiMiddleware[]) => {
+  return async function (c: TabiContext): Promise<void> {
+    let lastIndex = -1;
+
+    async function dispatch(i: number): Promise<void> {
+      if (i <= lastIndex) {
+        throw new Error("next() called multiple times");
+      }
+
+      lastIndex = i;
+
+      const currentMiddleware: TabiMiddleware | undefined = middleware[i];
+
+      if (!currentMiddleware) {
+        return;
+      }
+
+      await currentMiddleware(c, () => dispatch(i + 1));
+    }
+
+    await dispatch(0);
+  };
+};

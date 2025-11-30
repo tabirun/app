@@ -1,0 +1,71 @@
+{
+  "name": "@tabirun/app",
+  "version": "0.1.0",
+  "license": "MIT",
+  "nodeModulesDir": "auto",
+  "publish": {
+    "include": [
+      "app/",
+      "body-size/",
+      "cache-control/",
+      "compression/",
+      "cookies/",
+      "cors/",
+      "csrf/",
+      "csp/",
+      "linear-router/",
+      "logs/",
+      "rate-limit/",
+      "request-id/",
+      "security-headers/",
+      "serve-files/",
+      "status/",
+      "timeout/",
+      "validate/",
+      "type-utils/",
+      "deno.json",
+      "README.md",
+      "LICENSE"
+    ],
+    "exclude": ["**/tests/**", "**/*.test.ts"]
+  },
+  "exports": {
+    ".": "./app/mod.ts",
+    "./body-size": "./body-size/mod.ts",
+    "./cache-control": "./cache-control/mod.ts",
+    "./compression": "./compression/mod.ts",
+    "./cookies": "./cookies/mod.ts",
+    "./cors": "./cors/mod.ts",
+    "./csrf": "./csrf/mod.ts",
+    "./csp": "./csp/mod.ts",
+    "./linear-router": "./linear-router/mod.ts",
+    "./logs": "./logs/mod.ts",
+    "./rate-limit": "./rate-limit/mod.ts",
+    "./request-id": "./request-id/mod.ts",
+    "./security-headers": "./security-headers/mod.ts",
+    "./serve-files": "./serve-files/mod.ts",
+    "./status": "./status/mod.ts",
+    "./timeout": "./timeout/mod.ts",
+    "./validate": "./validate/mod.ts"
+  },
+  "tasks": {
+    "test": "deno test --allow-all --clean --coverage",
+    "coverage": "deno coverage coverage --exclude='.*/T/.*' --exclude='.*/tests/fixtures/.*'",
+    "lint": "deno lint",
+    "format": "deno fmt",
+    "check": "deno check ."
+  },
+  "imports": {
+    "@standard-schema/spec": "jsr:@standard-schema/spec@^1.0.0",
+    "@std/async": "jsr:@std/async@^1.0.10",
+    "@std/cache": "jsr:@std/cache@^0.1.3",
+    "@std/crypto": "jsr:@std/crypto@^1.0.5",
+    "@std/encoding": "jsr:@std/encoding@^1.0.9",
+    "@std/expect": "jsr:@std/expect@^1.0.13",
+    "@std/fs": "jsr:@std/fs@^1.0.11",
+    "@std/http": "jsr:@std/http@^1.0.13",
+    "@std/path": "jsr:@std/path@^1.0.8",
+    "@std/testing": "jsr:@std/testing@^1.0.9",
+    "zod": "npm:zod@^3.24.1"
+  }
+}
