@@ -1,3 +1,4 @@
+import { timingSafeEqual } from "@std/crypto";
 import type { TabiContext } from "../app/mod.ts";
 
 /**
@@ -28,7 +29,13 @@ const createSignature = async (
 
 /**
  * Verify HMAC-SHA256 signature for a value.
- * Uses constant-time comparison to prevent timing attacks.
+ *
+ * Uses constant-time comparison via @std/crypto timingSafeEqual() to prevent
+ * timing attacks. A naive string comparison (===) returns early on the first
+ * mismatched character, allowing attackers to measure response times and
+ * incrementally guess the correct signature byte-by-byte. Constant-time
+ * comparison always takes the same amount of time regardless of where the
+ * mismatch occurs, eliminating this side-channel.
  */
 const verifySignature = async (
   value: string,
@@ -36,7 +43,18 @@ const verifySignature = async (
   secret: string,
 ): Promise<boolean> => {
   const expectedSignature = await createSignature(value, secret);
-  return signature === expectedSignature;
+
+  const encoder = new TextEncoder();
+  const a = encoder.encode(signature);
+  const b = encoder.encode(expectedSignature);
+
+  // Length check is safe to leak via timing - attackers already know the
+  // expected signature length (64 hex chars for SHA-256)
+  if (a.byteLength !== b.byteLength) {
+    return false;
+  }
+
+  return timingSafeEqual(a, b);
 };
 
 /**
