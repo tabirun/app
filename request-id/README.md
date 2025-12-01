@@ -21,10 +21,10 @@ app.get("/", (c) => {
 
 ## Options
 
-| Option       | Type           | Default            | Description           |
-| ------------ | -------------- | ------------------ | --------------------- |
-| `generator`  | `() => string` | `crypto.randomUUID`| ID generator function |
-| `headerName` | `string`       | `"X-Request-ID"`   | Header name           |
+| Option       | Type           | Default             | Description           |
+| ------------ | -------------- | ------------------- | --------------------- |
+| `generator`  | `() => string` | `crypto.randomUUID` | ID generator function |
+| `headerName` | `string`       | `"X-Request-ID"`    | Header name           |
 
 ## Notes
 

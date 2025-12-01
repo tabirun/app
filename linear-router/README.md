@@ -15,9 +15,9 @@ LinearRouter is the default - no explicit setup needed:
 ```typescript
 const app = new TabiApp();
 
-app.get("/users", handler);           // Static route
-app.get("/users/:id", handler);       // Parameterized route
-app.get("/files/*", handler);         // Wildcard route
+app.get("/users", handler); // Static route
+app.get("/users/:id", handler); // Parameterized route
+app.get("/files/*", handler); // Wildcard route
 
 // Explicit usage
 const app = new TabiApp({

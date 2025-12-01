@@ -36,10 +36,10 @@ app.post("/login", validate, (c) => {
 
 ## Options
 
-| Option         | Type       | Default | Description                     |
-| -------------- | ---------- | ------- | ------------------------------- |
-| `reportErrors` | `boolean`  | `false` | Include errors in response      |
-| `onError`      | `function` | -       | Custom error handler            |
+| Option         | Type       | Default | Description                |
+| -------------- | ---------- | ------- | -------------------------- |
+| `reportErrors` | `boolean`  | `false` | Include errors in response |
+| `onError`      | `function` | -       | Custom error handler       |
 
 ## Notes
 

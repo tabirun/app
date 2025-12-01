@@ -16,9 +16,9 @@ app.use(timeout({ ms: 30000 })); // 30 seconds
 
 ## Options
 
-| Option | Type     | Default | Description                    |
-| ------ | -------- | ------- | ------------------------------ |
-| `ms`   | `number` | `30000` | Maximum duration in ms         |
+| Option | Type     | Default | Description            |
+| ------ | -------- | ------- | ---------------------- |
+| `ms`   | `number` | `30000` | Maximum duration in ms |
 
 ## Notes
 

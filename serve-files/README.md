@@ -11,24 +11,30 @@ import { serveFiles } from "@tabirun/app/serve-files";
 ## Usage
 
 ```typescript
-app.get("/static/*", serveFiles({
-  directory: "./public",
-}));
+app.get(
+  "/static/*",
+  serveFiles({
+    directory: "./public",
+  }),
+);
 
 // Custom 404 handling
-app.get("/*", serveFiles({
-  directory: "./dist",
-  onNotFound: (c) => c.html("<h1>Not Found</h1>", 404),
-}));
+app.get(
+  "/*",
+  serveFiles({
+    directory: "./dist",
+    onNotFound: (c) => c.html("<h1>Not Found</h1>", 404),
+  }),
+);
 ```
 
 ## Options
 
-| Option       | Type       | Default        | Description                   |
-| ------------ | ---------- | -------------- | ----------------------------- |
-| `directory`  | `string`   | (required)     | Directory to serve from       |
-| `serveIndex` | `boolean`  | `true`         | Serve index.html for dirs     |
-| `onNotFound` | `function` | `c.notFound()` | Custom 404 handler            |
+| Option       | Type       | Default        | Description               |
+| ------------ | ---------- | -------------- | ------------------------- |
+| `directory`  | `string`   | (required)     | Directory to serve from   |
+| `serveIndex` | `boolean`  | `true`         | Serve index.html for dirs |
+| `onNotFound` | `function` | `c.notFound()` | Custom 404 handler        |
 
 ## Notes
 

@@ -5,7 +5,7 @@ Middleware for rate limiting requests.
 ## Installation
 
 ```typescript
-import { rateLimit, InMemoryRateLimitStore } from "@tabirun/app/rate-limit";
+import { InMemoryRateLimitStore, rateLimit } from "@tabirun/app/rate-limit";
 ```
 
 ## Usage

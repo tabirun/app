@@ -32,7 +32,8 @@ app.get("/profile", async (c) => {
 ## API
 
 - `setCookie(c, name, value, options?)` - Set cookie
-- `getCookie(c, name, secret?)` - Get cookie (returns `null` if missing or invalid)
+- `getCookie(c, name, secret?)` - Get cookie (returns `null` if missing or
+  invalid)
 - `deleteCookie(c, name, options?)` - Delete cookie
 
 ## Options

@@ -1,6 +1,7 @@
 # app
 
-Core framework providing routing, middleware composition, and request/response handling.
+Core framework providing routing, middleware composition, and request/response
+handling.
 
 ## Installation
 
@@ -68,7 +69,8 @@ Deno.serve(app.handler);
 - `wildcard` - Wildcard match
 - `header(name)` - Get header
 - `searchParam(name)` - Get query param
-- `json()` / `text()` / `formData()` / `arrayBuffer()` / `blob()` - Body parsing (memoized)
+- `json()` / `text()` / `formData()` / `arrayBuffer()` / `blob()` - Body parsing
+  (memoized)
 - `valid<T>(source)` - Get validated data
 
 **TabiError**

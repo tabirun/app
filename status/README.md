@@ -5,7 +5,7 @@ Utilities and types for HTTP status codes.
 ## Installation
 
 ```typescript
-import { statusText, type Status } from "@tabirun/app/status";
+import { type Status, statusText } from "@tabirun/app/status";
 ```
 
 ## Usage

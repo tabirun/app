@@ -27,14 +27,15 @@ app.use(csrf({
 
 ## Options
 
-| Option         | Type                                     | Default         | Description                   |
-| -------------- | ---------------------------------------- | --------------- | ----------------------------- |
-| `origin`       | `string \| string[] \| function`         | Request origin  | Allowed origins               |
-| `secFetchSite` | `string \| string[] \| function`         | `"same-origin"` | Allowed Sec-Fetch-Site values |
+| Option         | Type                             | Default         | Description                   |
+| -------------- | -------------------------------- | --------------- | ----------------------------- |
+| `origin`       | `string \| string[] \| function` | Request origin  | Allowed origins               |
+| `secFetchSite` | `string \| string[] \| function` | `"same-origin"` | Allowed Sec-Fetch-Site values |
 
 ## Notes
 
 - Uses `Sec-Fetch-Site` header (cannot be forged by browsers)
 - Falls back to `Origin` header for older browsers
-- Only validates unsafe methods (POST, PUT, DELETE, PATCH) with form content types
+- Only validates unsafe methods (POST, PUT, DELETE, PATCH) with form content
+  types
 - Returns 403 Forbidden on validation failure

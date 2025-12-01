@@ -32,5 +32,6 @@ app.use(compression({
 ## Notes
 
 - Only compresses when client sends `Accept-Encoding: gzip`
-- Responses below `bufferThreshold` set `Content-Length`; larger use chunked transfer
+- Responses below `bufferThreshold` set `Content-Length`; larger use chunked
+  transfer
 - Use CDN/reverse proxy compression for cacheable responses
