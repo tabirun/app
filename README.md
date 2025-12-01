@@ -13,6 +13,11 @@
   <img src="./assets/mascot-readme.png" alt="Tabi Mascot" width="200"/>
 </p>
 
+> Tabi (旅) means "journey" in Japanese. The shortest path between two points is
+> a straight line. Tabi stays out of your way—no abstractions to fight, no magic
+> to reverse-engineer, no surprises in production. Every build should be a
+> stress free journey.
+
 ## Quick Start
 
 ```bash
